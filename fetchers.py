@@ -43,4 +43,23 @@ def get_weather():
 
 
 def get_quote():
-    return "Quote not implemented yet."
+    try:
+        response = requests.get(
+            "https://zenquotes.io/api/random",
+            timeout=10,
+        )
+        if response.status_code != 200:
+            return "Quote unavailable"
+        data = response.json()
+        if not data or not isinstance(data, list) or not data[0]:
+            return "Quote unavailable"
+        item = data[0]
+        if not isinstance(item, dict):
+            return "Quote unavailable"
+        quote = item.get("q")
+        author = item.get("a")
+        if not quote or not author:
+            return "Quote unavailable"
+        return f"{quote} — {author}"
+    except Exception:
+        return "Quote unavailable"
