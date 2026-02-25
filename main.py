@@ -1,6 +1,7 @@
 from fetchers import get_weather, get_quote
 from formatter import build_summary
 from output import save_summary
+from emailer import send_email
 from datetime import datetime
 import zoneinfo
 
@@ -20,6 +21,10 @@ def main():
 
     # 4. Save summary
     save_summary(summary_text)
+
+    # 5. Send email
+    email_status = send_email("Your Daily Summary", summary_text)
+    print(email_status)
 
 
 if __name__ == "__main__":
