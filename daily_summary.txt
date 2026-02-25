@@ -1,0 +1,2 @@
+Weather: -3°C, overcast clouds in Bathurst
+Quote: Quote not implemented yet.
