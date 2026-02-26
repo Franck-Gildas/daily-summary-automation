@@ -1,0 +1,15 @@
+{
+  "location": {
+    "city": "Bathurst",
+    "country": "CA"
+  },
+  "output_file": "daily_summary.txt",
+  "timezone": "America/Moncton",
+  "time_format": "%Y-%m-%d %H:%M %Z",
+  "features": {
+    "weather": true,
+    "quote": true,
+    "email": true
+  },
+  "email_subject": "Your Daily Summary"
+}
