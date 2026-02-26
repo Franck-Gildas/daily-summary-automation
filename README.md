@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 
 Daily Summary Automation
@@ -137,3 +138,7 @@ License
 MIT License — free to use, modify, and distribute.
 
 ---
+=======
+# daily-summary-automation
+Automated daily summary generator with weather, quotes, HTML email formatting, and Windows Task Scheduler integration.
+>>>>>>> 5bbfb202a1a7a21aefbd561fc61cd105aebdbae8
