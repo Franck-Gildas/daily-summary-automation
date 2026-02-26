@@ -2,6 +2,13 @@
 .cursor/
 __pycache__/
 =======
+
+# Environment variables (never commit real secrets)
+.env
+
+# Output files
+daily_summary.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
