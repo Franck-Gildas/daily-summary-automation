@@ -1,5 +1,5 @@
 from fetchers import get_weather, get_quote
-from formatter import build_summary
+from formatter import build_summary, build_html_summary
 from output import save_summary
 from emailer import send_email
 from datetime import datetime
@@ -21,6 +21,7 @@ def main():
     email_enabled = config["features"]["email"]
 
     email_subject = config["email_subject"]
+    email_format = config.get("email_format", "text")
 
     # 1. Fetch data
     weather = get_weather() if weather_enabled else "Weather disabled"
@@ -39,7 +40,11 @@ def main():
 
     # 5. Send email (optional)
     if email_enabled:
-        email_status = send_email(email_subject, summary_text)
+        if email_format == "html":
+            html_summary = build_html_summary(weather, quote, timestamp)
+            email_status = send_email(email_subject, summary_text, html_summary)
+        else:
+            email_status = send_email(email_subject, summary_text)
         print(email_status)
     else:
         print("Email disabled")

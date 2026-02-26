@@ -11,5 +11,6 @@
     "quote": true,
     "email": true
   },
-  "email_subject": "Your Daily Summary"
+  "email_subject": "Your Daily Summary",
+  "email_format": "html"
 }
